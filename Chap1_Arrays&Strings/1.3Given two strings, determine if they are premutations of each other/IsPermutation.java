@@ -22,6 +22,8 @@ class Main {
         System.out.println(isPermut("baabba", "bbbaaa"));
     }
 
+    // time: O(n), n is the string length
+    // space:O(n), n is the string length
     static boolean isPermutation(String str1, String str2) {
         // Small optimization
         if (str1.length() != str2.length()) {
@@ -42,6 +44,8 @@ class Main {
         return true;
     }
 
+    // time:O(nlogn), sorting with string length n
+    // space:O(n), two temporary char arrays
     static boolean isPermut(String str1, String str2) {
         // Small optimization
         if (str1.length() != str2.length()) {

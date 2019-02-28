@@ -1,6 +1,8 @@
 /**
  * @param {string} str1
  * @param {string} str2
+ * time:O(n), n is the string length
+ * space:O(n), n is the string length 
  */
 function isPermutation(str1, str2) {
     // Small optimization (check length first)
@@ -26,6 +28,8 @@ function isPermutation(str1, str2) {
 /**
  * @param {string} str1
  * @param {string} str2
+ * time:O(nlogn), n is the string length
+ * space:O(n), n is the string length
  */
 function isPermu(str1, str2) {
     // Small optimization (check length first)
