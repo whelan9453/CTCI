@@ -1,5 +1,5 @@
 /**
- * @param {number[][]} matrix
+ * @param {number[][]} m
  * @returns {number[][]}
  * time:O(n^2), n is the side length of the matrix
  * space:O(n^2)
@@ -24,7 +24,7 @@ function rotateMatrixR(m) {
 }
 
 /**
- * @param {number[][]} matrix
+ * @param {number[][]} m
  * @returns {number[][]}
  * time:O(n^2), n is the side length of the matrix
  * space:O(n^2)
@@ -47,12 +47,60 @@ function rotateMatrixL(m) {
     return ret;
 }
 
+/**
+ * @param {number[][]} m
+ * @returns {undefined}
+ * time:O(n^2), n is the side length of the matrix
+ * space:O(1) in place replacement
+ */
+function rotateMatrixRi(m) {
+    let n = m.length;
+    // flip left to right
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < Math.floor(n / 2); j++) {
+            let temp = m[i][j];
+            m[i][j] = m[i][n - j - 1];
+            m[i][n - j - 1] = temp;
+        }
+    }
+    // swap diagnosis
+    for (let i = 0; i < n; i++) {
+        for (let c = 0; c < n - i - 1; c++) {
+            let temp = m[i][c];
+            m[i][c] = m[n - c - 1][n - i - 1];
+            m[n - c - 1][n - i - 1] = temp;
+        }
+    }
+}
+
+/**
+ * @param {number[][]} m
+ * @returns {undefined}
+ * time:O(n^2), n is the side length of the matrix
+ * space:O(1) in place replacement
+ */
+function rotateMatrixLe(m) {
+    let n = m.length;
+    // flip upside down
+    for (let j = 0; j < n; j++) {
+        for (let i = 0; i < Math.floor(n / 2); i++) {
+            let temp = m[i][j];
+            m[i][j] = m[n - i - 1][j];
+            m[n - i - 1][j] = temp;
+        }
+    }
+    // swap diagnosis
+    for (let i = 0; i < n; i++) {
+        for (let c = 0; c < n - i - 1; c++) {
+            let temp = m[i][c];
+            m[i][c] = m[n - c - 1][n - i - 1];
+            m[n - c - 1][n - i - 1] = temp;
+        }
+    }
+}
+
 function test() {
-    let m = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
-    ];
+    let m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
     console.log("test rotateR");
     for (let i = 0; i < m.length + 1; i++) {
         m = rotateMatrixR(m);
@@ -61,6 +109,16 @@ function test() {
     console.log("test rotateL");
     for (let i = 0; i < m.length + 1; i++) {
         m = rotateMatrixL(m);
+        console.log(m);
+    }
+    console.log("test rotateR in place");
+    for (let i = 0; i < m.length + 1; i++) {
+        rotateMatrixRi(m);
+        console.log(m);
+    }
+    console.log("test rotateL in place");
+    for (let i = 0; i < m.length + 1; i++) {
+        rotateMatrixLe(m);
         console.log(m);
     }
 }
