@@ -24,6 +24,7 @@ class Main {
 
     // time: O(n), n is the string length
     // space:O(n), n is the string length
+    // build a dictionary and check later
     static boolean isPermutation(String str1, String str2) {
         // Small optimization
         if (str1.length() != str2.length()) {

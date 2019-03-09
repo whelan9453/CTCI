@@ -8,9 +8,9 @@ class Main {
         System.out.println(isRotation("abcd", "bdca") == false);
     }
 
-    // time:O(n^2), n is the string length, we loop n times and each time we need
-    // time O(n) to copy the string of length n
+    // time:O(n^2), n is the string length, we loop n times and each time we need time O(n) to copy the string of length n
     // space:O(n), if we count the temp string with length n in the for loop
+    // brute force to get all rotations of string 1 and compare with string 2
     static boolean isRotation(String str1, String str2) {
         if (str1.length() != str2.length()) {
             return false;

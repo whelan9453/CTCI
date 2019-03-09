@@ -12,6 +12,8 @@ class Main {
 
     // time:O(n), n is the longer string length
     // space:O(n), we would use several string copies in this solution
+    // break into two situations, which are replace and insert/remove
+    // string length will be the same in the replace case
     static boolean oneAway(String str1, String str2) {
         // Small optimization (Check Two or More Away)
         if (Math.abs(str1.length() - str2.length()) > 1) {

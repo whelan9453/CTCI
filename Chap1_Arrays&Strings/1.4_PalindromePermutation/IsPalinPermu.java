@@ -9,7 +9,7 @@ class Main {
         System.out.println(isPalinPermu("_^^_") == true);
     }
 
-    // Build a map and check single char (at most 1 single char is allowed)
+    // Build a map and check if there is at most 1 singular char is allowed
     // time:O(n+128) = O(n), n is the string length
     // space:O(128+1) = O(1)
     static boolean isPalinPermu(String str) {

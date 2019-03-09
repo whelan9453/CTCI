@@ -20,6 +20,8 @@ class Main {
 
     // time:O(n*m), n and m is the matrix width and height
     // space:O(n*m), we create two maps to record zero points
+    // traverse the matrix and mark the zero rows and columns
+    // trarese again to put zeros into those marked rows and columns
     static void zeroMatrixFat(int[][] m) {
         // zero check
         if (m.length < 1 || m[0].length < 1) {

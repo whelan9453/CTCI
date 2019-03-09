@@ -8,6 +8,8 @@ class Main {
 
     // time:O(n), n is the string length
     // space:O(n)
+    // use StringBuilder to avoid redundant string copy
+    // straight forward count repeat chars and compare with the original string
     static String compressStr(String str) {
         // zero check
         if (str.length() < 2) {

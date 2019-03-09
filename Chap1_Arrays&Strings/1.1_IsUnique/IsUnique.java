@@ -14,6 +14,7 @@ class Main {
 
     // time:O(n), n is input string length
     // space:O(128)=O(1)
+    // build a dictionary and check later
     static boolean isU(String str) {
         // Assume this is a ASCII string
         int[] m = new int[128];

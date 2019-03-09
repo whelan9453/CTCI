@@ -38,6 +38,7 @@ class Main {
 
     // time:O(n^2), n is the matrix side length
     // space:O(n^2), we create a nxn matrix and copy value to there
+    // create an empty matrix and copy corresponding values to it
     static int[][] rotateMatrixRight(int[][] m) {
         int n = m.length;
         int[][] ret = new int[n][n];
@@ -72,6 +73,7 @@ class Main {
     }
 
     // in place rotation clockwise (flip and swap)
+    // we flip the matrix left to right and then swap diagnosisly
     // time:O(n^2), n is the matrix length
     // space:O(1), in place replacement
     static void rotateMatrixR(int[][] m) {
